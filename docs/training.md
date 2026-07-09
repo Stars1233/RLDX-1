@@ -53,6 +53,10 @@ uv run torchrun --nproc_per_node=8 rldx/experiment/launch_train.py \
     --use-wandb --wandb-project rldx-finetune
 ```
 
+> **Choosing the base checkpoint.** Match `--video-length` to the base:
+> `RLWRLD/RLDX-1-PT` (video input) uses `--video-length 4`, while
+> `RLWRLD/RLDX-1-PT-IMG` (image input) uses `--video-length 1`.
+
 Key fine-tune flags:
 
 | Flag | Purpose |
