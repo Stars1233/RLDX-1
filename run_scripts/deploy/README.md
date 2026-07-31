@@ -228,23 +228,24 @@ uv pip install -e .
 
 ### 7.1 Update `droid/droid/misc/parameters.py`
 
-Replace the file contents with:
+Replace the file contents with the following, filling in the nine `<...>` placeholders
+with the values for your own setup:
 
 ```python
 from cv2 import aruco
 
 # Robot Params #
-nuc_ip = "172.30.1.112"
-robot_ip = "172.16.0.2"
-laptop_ip = "172.30.1.103"
-sudo_password = "rlwrld!@#$"
+nuc_ip = "<nuc-ip>"
+robot_ip = "<robot-ip>"
+laptop_ip = "<laptop-ip>"
+sudo_password = "<your-sudo-password>"
 robot_type = "fr3"  # 'panda' or 'fr3'
-robot_serial_number = "295341-0051724"
+robot_serial_number = "<robot-serial-number>"
 
 # Camera ID's #
-hand_camera_id = "10623639"
-varied_camera_1_id = "34022131"
-varied_camera_2_id = "34022131"
+hand_camera_id = "<hand-camera-id>"
+varied_camera_1_id = "<varied-camera-1-id>"
+varied_camera_2_id = "<varied-camera-2-id>"
 
 # Charuco Board Params #
 CHARUCOBOARD_ROWCOUNT = 9
@@ -254,11 +255,14 @@ CHARUCOBOARD_MARKER_SIZE = 0.016
 ARUCO_DICT = aruco.Dictionary_get(aruco.DICT_5X5_100)
 
 # Ubuntu Pro Token (RT PATCH) #
-ubuntu_pro_token = "1LrMq6bwozpTZQydy1Dx2iUHK2tz"
+ubuntu_pro_token = "<your-ubuntu-pro-token>"
 
 # Code Version [DONT CHANGE] #
 droid_version = "1.3"
 ```
+
+> `parameters.py` now holds a plaintext sudo password. Keep it local — do not commit it
+> or share it.
 
 ### 7.2 Modify `droid/droid/misc/server_interface.py`
 
